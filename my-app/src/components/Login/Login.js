@@ -30,6 +30,7 @@ const LoginPage = () => {
             </Grid>
             <TextField
               required
+              className={classes.filledTextFiled}
               size="small"
               variant="filled"
               name="username"
@@ -46,6 +47,7 @@ const LoginPage = () => {
             </Grid>
             <TextField
               required
+              className={classes.filledTextFiled}
               size="small"
               variant="filled"
               name="password"
@@ -63,8 +65,8 @@ const LoginPage = () => {
         </Grid>
         <Grid item>
           <ThemeProvider theme={theme}>
-            <Button variant="outlined" color="custombrown">
-              <Typography color={"#663300"}>Sign in</Typography>
+            <Button variant="contained" color="custombrown">
+              <Typography color={"whitesmoke"}>Sign in</Typography>
             </Button>
           </ThemeProvider>
         </Grid>

@@ -1,5 +1,5 @@
 import { makeStyles } from "@mui/styles";
-import image from "../../photos/backgroundImage.jpg"
+import image from "../../photos/backgroundImage.jpg";
 
 const useStyles = makeStyles(() => ({
   mainContainer: {
@@ -9,10 +9,10 @@ const useStyles = makeStyles(() => ({
     paddingRight: 10,
     paddingLeft: 10,
     height: "100vh",
-    width: "100vw"
+    width: "100vw",
   },
   bigContainer: {
-    backgroundImage:`url(${image})`,
+    backgroundImage: `url(${image})`,
     backgroundSize: "cover",
     backgroundPosition: "center !important",
   },
@@ -28,6 +28,9 @@ const useStyles = makeStyles(() => ({
     width: "auto",
     paddingTop: 15,
     paddingLeft: 15,
+  },
+  filledTextFiled: {
+    background: "rgb(255, 255, 255)",
   },
   questionTypo: {
     paddingTop: 50,
