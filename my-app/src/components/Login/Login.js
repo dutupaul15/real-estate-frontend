@@ -23,7 +23,7 @@ const LoginPage = () => {
             <Typography className={classes.paulIMob}>PaulImob</Typography>
           </Grid>
         </Grid>
-        <Grid item paddingTop={"150px"}>
+        <Grid item paddingTop={"100px"}>
           <Grid container className={classes.credentialsTextField}>
             <Grid container className={classes.credentialsTypo}>
               <Typography>Username</Typography>
@@ -31,7 +31,7 @@ const LoginPage = () => {
             <TextField
               required
               size="small"
-              variant="outlined"
+              variant="filled"
               name="username"
               placeholder="Enter your username.."
             ></TextField>
@@ -47,7 +47,7 @@ const LoginPage = () => {
             <TextField
               required
               size="small"
-              variant="outlined"
+              variant="filled"
               name="password"
               placeholder="Enter your password.."
             ></TextField>
@@ -57,18 +57,14 @@ const LoginPage = () => {
               <Typography>You don't have an account?</Typography>
             </Grid>
             <Grid container>
-              <Typography>
-                <a href>Register</a>
-              </Typography>
+              <Typography>Register</Typography>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item paddingLeft={"40rem"} paddingTop={"8rem"}>
+        <Grid item>
           <ThemeProvider theme={theme}>
             <Button variant="outlined" color="custombrown">
-              <Typography color={"#663300"} fontFamily={"Lucida Console"}>
-                Sign in
-              </Typography>
+              <Typography color={"#663300"}>Sign in</Typography>
             </Button>
           </ThemeProvider>
         </Grid>

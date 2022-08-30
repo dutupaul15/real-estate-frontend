@@ -3,20 +3,21 @@ import image from "../../photos/backgroundImage.jpg"
 
 const useStyles = makeStyles(() => ({
   mainContainer: {
-    backgroundColor: "white",
+    backgroundColor: "whitesmoke !important",
     paddingTop: 10,
     paddingBottom: 10,
     paddingRight: 10,
     paddingLeft: 10,
     height: "100vh",
+    width: "100vw"
   },
   bigContainer: {
-    backgroundColor: "grey !important",
     backgroundImage:`url(${image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center !important",
   },
   paulIMob: {
     fontFamily: "Lucida Console !important",
-    fontStyle: "normal",
     fontSize: "5rem !important",
     color: "#663300",
   },
