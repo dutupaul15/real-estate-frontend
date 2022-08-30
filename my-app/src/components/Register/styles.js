@@ -1,6 +1,6 @@
 import { makeStyles } from "@mui/styles";
 
-import image from "../../photos/backgroundImage.jpg";
+import image from "../../photos/backgroundImageRegister.jpg";
 
 const useStyles = makeStyles(() => ({
   mainContainer: {
@@ -33,10 +33,10 @@ const useStyles = makeStyles(() => ({
   filledTextFiled: {
     background: "rgb(255, 255, 255)",
   },
-  questionTypo: {
-    paddingTop: 50,
-    width: "50%",
-  },
+  buttonContainer: {
+    padding: 50,
+    
+  }
 }));
 
 export default useStyles;
