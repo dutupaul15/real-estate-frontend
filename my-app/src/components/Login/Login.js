@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, Typography, TextField, Button } from "@mui/material";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
@@ -8,6 +8,12 @@ import theme from "../../utils/customThemes";
 
 const LoginPage = () => {
   const classes = useStyles();
+  const [inputFields, setInputFields] = useState([]);
+
+  const updateInputFields = (e) => {
+    setInputFields({...inputFields, [e.target.name]: e.target.value});
+    console.log(inputFields);
+  };
 
   return (
     <Grid container className={classes.mainContainer}>
@@ -35,6 +41,7 @@ const LoginPage = () => {
               variant="filled"
               name="username"
               placeholder="Enter your username.."
+              onChange={updateInputFields}
             ></TextField>
           </Grid>
           <Grid
@@ -48,10 +55,12 @@ const LoginPage = () => {
             <TextField
               required
               className={classes.filledTextFiled}
+              type="password"
               size="small"
               variant="filled"
               name="password"
               placeholder="Enter your password.."
+              onChange={updateInputFields}
             ></TextField>
           </Grid>
           <Grid item>
@@ -59,7 +68,7 @@ const LoginPage = () => {
               <Typography>You don't have an account?</Typography>
             </Grid>
             <Grid container>
-              <Typography>Register</Typography>
+              <a href="http://localhost:3000/register">Register</a>
             </Grid>
           </Grid>
         </Grid>
