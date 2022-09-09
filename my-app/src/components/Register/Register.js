@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Typography, TextField, Button } from "@mui/material";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
@@ -8,6 +8,19 @@ import theme from "../../utils/customThemes";
 
 const RegisterPage = () => {
   const classes = useStyles();
+  const [inputFields, setInputFields] = useState([
+    {
+      email: "",
+      username: "",
+      password: "",
+    },
+  ]);
+
+  const updateInputFields = (e) => {
+    console.log(e.target.name);
+    setInputFields({ ...inputFields, [e.target.name]: e.target.value });
+    console.log(inputFields);
+  };
 
   return (
     <Grid container className={classes.mainContainer}>
@@ -35,6 +48,7 @@ const RegisterPage = () => {
               variant="filled"
               name="username"
               placeholder="Enter your email.."
+              onChange={updateInputFields}
             ></TextField>
           </Grid>
           <Grid
@@ -52,6 +66,7 @@ const RegisterPage = () => {
               variant="filled"
               name="username"
               placeholder="Enter your username.."
+              onChange={updateInputFields}
             ></TextField>
           </Grid>
           <Grid
@@ -63,12 +78,14 @@ const RegisterPage = () => {
               <Typography>Password</Typography>
             </Grid>
             <TextField
+              type="password"
               required
               className={classes.filledTextFiled}
               size="small"
               variant="filled"
               name="password"
               placeholder="Enter your password.."
+              onChange={updateInputFields}
             ></TextField>
           </Grid>
           <Grid container className={classes.buttonContainer}>

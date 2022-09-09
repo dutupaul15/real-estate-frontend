@@ -8,10 +8,16 @@ import theme from "../../utils/customThemes";
 
 const LoginPage = () => {
   const classes = useStyles();
-  const [inputFields, setInputFields] = useState([]);
+  const [inputFields, setInputFields] = useState([
+    {
+      username: "",
+      password: "",
+    },
+  ]);
 
   const updateInputFields = (e) => {
-    setInputFields({...inputFields, [e.target.name]: e.target.value});
+   // console.log(e.target.name);
+    setInputFields({ ...inputFields, [e.target.name]: e.target.value });
     console.log(inputFields);
   };
 
