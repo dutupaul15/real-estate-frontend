@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Grid, Typography, TextField, Button } from "@mui/material";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
@@ -17,10 +18,17 @@ const RegisterPage = () => {
   ]);
 
   const updateInputFields = (e) => {
-    console.log(e.target.name);
+    console.log(e.target);
     setInputFields({ ...inputFields, [e.target.name]: e.target.value });
     console.log(inputFields);
   };
+
+  const navigate = useNavigate();
+  const routeChange = () =>
+  {
+    let path = `/dashboard`;
+    navigate(path);
+  }
 
   return (
     <Grid container className={classes.mainContainer}>
@@ -46,7 +54,7 @@ const RegisterPage = () => {
               className={classes.filledTextFiled}
               size="small"
               variant="filled"
-              name="username"
+              name="email"
               placeholder="Enter your email.."
               onChange={updateInputFields}
             ></TextField>
@@ -90,7 +98,7 @@ const RegisterPage = () => {
           </Grid>
           <Grid container className={classes.buttonContainer}>
             <ThemeProvider theme={theme}>
-              <Button variant="contained" color="custombrown">
+              <Button onClick={routeChange} variant="contained" color="custombrown">
                 <Typography color={"whitesmoke"}>Sign up</Typography>
               </Button>
             </ThemeProvider>

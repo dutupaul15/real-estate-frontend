@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Grid, Typography, TextField, Button } from "@mui/material";
 import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
@@ -16,11 +17,15 @@ const LoginPage = () => {
   ]);
 
   const updateInputFields = (e) => {
-   // console.log(e.target.name);
     setInputFields({ ...inputFields, [e.target.name]: e.target.value });
     console.log(inputFields);
   };
 
+  const navigate = useNavigate();
+  const routeChange = () => {
+    let path = `/dashboard`;
+    navigate(path);
+  };
   return (
     <Grid container className={classes.mainContainer}>
       <CssBaseline />
@@ -79,11 +84,23 @@ const LoginPage = () => {
           </Grid>
         </Grid>
         <Grid item>
-          <ThemeProvider theme={theme}>
-            <Button variant="contained" color="custombrown">
-              <Typography color={"whitesmoke"}>Sign in</Typography>
-            </Button>
-          </ThemeProvider>
+          {inputFields.username && inputFields.password ? (
+            <ThemeProvider theme={theme}>
+              <Button
+                onClick={routeChange}
+                variant="contained"
+                color="custombrown"
+              >
+                <Typography color={"whitesmoke"}>Sign in</Typography>
+              </Button>
+            </ThemeProvider>
+          ) : (
+            <ThemeProvider theme={theme}>
+              <Button variant="contained" color="custombrown" disabled>
+                <Typography color={"whitesmoke"}>Sign in</Typography>
+              </Button>
+            </ThemeProvider>
+          )}
         </Grid>
       </Grid>
     </Grid>

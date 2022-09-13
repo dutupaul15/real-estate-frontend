@@ -9,15 +9,12 @@ const useStyles = makeStyles(() => ({
     paddingLeft: 10,
     height: "100vh",
     width: "100vw",
+    flexDirection: "column !important"
   },
   paulIMob: {
     fontFamily: "Lucida Console !important",
     fontSize: "2rem !important",
     color: "#663300",
-  },
-  toolBar: {
-    width: "100%",
-    marginTop: "15px",
   },
 }));
 
