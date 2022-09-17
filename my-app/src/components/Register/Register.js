@@ -24,11 +24,10 @@ const RegisterPage = () => {
   };
 
   const navigate = useNavigate();
-  const routeChange = () =>
-  {
+  const routeChange = () => {
     let path = `/dashboard`;
     navigate(path);
-  }
+  };
 
   return (
     <Grid container className={classes.mainContainer}>
@@ -97,11 +96,25 @@ const RegisterPage = () => {
             ></TextField>
           </Grid>
           <Grid container className={classes.buttonContainer}>
-            <ThemeProvider theme={theme}>
-              <Button onClick={routeChange} variant="contained" color="custombrown">
-                <Typography color={"whitesmoke"}>Sign up</Typography>
-              </Button>
-            </ThemeProvider>
+            {inputFields.email &&
+            inputFields.username &&
+            inputFields.password ? (
+              <ThemeProvider theme={theme}>
+                <Button
+                  onClick={routeChange}
+                  variant="contained"
+                  color="custombrown"
+                >
+                  <Typography color={"whitesmoke"}>Sign up</Typography>
+                </Button>
+              </ThemeProvider>
+            ) : (
+              <ThemeProvider theme={theme}>
+                <Button variant="contained" color="custombrown" disabled>
+                  <Typography color={"whitesmoke"}>Sign up</Typography>
+                </Button>
+              </ThemeProvider>
+            )}
           </Grid>
         </Grid>
       </Grid>

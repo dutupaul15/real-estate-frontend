@@ -3,7 +3,6 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { Grid, Typography, TextField, Button } from "@mui/material";
 import { CssBaseline } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import IconButton from "@mui/material/IconButton";
@@ -20,6 +19,7 @@ const DashboardPage = () => {
       },
     },
   });
+  const [searchQuery, setSearchQuery] = useState("");
 
   const classes = useStyles();
   const navigate = useNavigate();
@@ -45,20 +45,12 @@ const DashboardPage = () => {
     </form>
   );
 
-  const filterData = (query, data) => {
-    if (!query) {
-      return data;
-    } else {
-      return data.filter((d) => d.toLowerCase().includes(query));
-    }
-  };
-
   return (
     <Grid container className={classes.mainContainer}>
       <CssBaseline />
-      <Box sx={{ flexGrow: 1 }}>
+      <Grid item padding="2px" xs={12} className={classes.navBar}>
         <ThemeProvider theme={navbarColor}>
-          <AppBar position="static" color="secondary">
+          <AppBar position="sticky" color="secondary">
             <Toolbar>
               <Typography className={classes.paulIMob} sx={{ flexGrow: 1 }}>
                 PaulImob
@@ -72,10 +64,34 @@ const DashboardPage = () => {
             </Toolbar>
           </AppBar>
         </ThemeProvider>
-        <Grid item marginTop="50px">
-          <SearchBar />
+      </Grid>
+      <Grid item xs={12} className={classes.bottomContainer}>
+        <Grid container xs={6} className={classes.leftContainer}>
+          <Grid item className={classes.searchBar}>
+            <TextField size="small" placeholder="Search..." />
+          </Grid>
+          <Grid item>
+            <Typography className={classes.categoriesTypo} variant="h6">
+              Categories
+            </Typography>
+          </Grid>
+          <Grid item paddingTop="3rem">
+            <Typography fontStyle="italic">
+              Single-floor house
+            </Typography>
+          </Grid>
+          <Grid item paddingTop="1rem">
+            <Typography fontStyle="italic">
+              Multi-floor house
+            </Typography>
+          </Grid>
+          <Grid item paddingTop="1rem">
+            <Typography fontStyle="italic">
+              Apartment
+            </Typography>
+          </Grid>
         </Grid>
-      </Box>
+      </Grid>
     </Grid>
   );
 };
