@@ -21,14 +21,14 @@ const useStyles = makeStyles(() => ({
     color: "#663300",
   },
   bottomContainer: {
-    backgroundColor: "#ddff33",
-    flexDirection: "column !important",
+    backgroundColor: "yellow",
+    display: "flex",
+    flexDirection:"row !important",
     height: "87%",
     marginTop: "1rem !important",
-    
   },
   leftContainer:{
-    backgroundColor: "blue",
+    backgroundColor: "#95B9C7",
     height: "100%",
     flexDirection:"column !important",
     alignItems: "center !important",
@@ -41,6 +41,13 @@ const useStyles = makeStyles(() => ({
     paddingTop:"10rem !important",
     marginRight:"10rem !important",
     fontFamily: "Century Gothic !important",
+  },
+  rightContainer: {
+    backgroundColor: "#FAAFBA",
+    display: "flex",
+    height: "100%",
+    flexDirection:"column !important",
+    alignItems: "center !important",
   }
 }));
 
