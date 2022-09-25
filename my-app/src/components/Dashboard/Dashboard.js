@@ -65,9 +65,17 @@ const DashboardPage = () => {
           <Grid item paddingTop="1rem">
             <Typography fontStyle="italic">Apartment</Typography>
           </Grid>
+          <Grid item className={classes.actionCard}>
+            <ActionCard action="buy" />
+          </Grid>
         </Grid>
         <Grid container xs={6} className={classes.rightContainer}>
-          <ActionCard/>
+          <Grid item className={classes.actionCard}>
+            <ActionCard action="rent" />
+          </Grid>
+          <Grid item className={classes.actionCard}>
+            <ActionCard action="sell" />
+          </Grid>
         </Grid>
       </Grid>
     </Grid>

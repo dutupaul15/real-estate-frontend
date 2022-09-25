@@ -28,6 +28,7 @@ const useStyles = makeStyles(() => ({
     marginTop: "1rem !important",
   },
   leftContainer:{
+    display:  "flex",
     backgroundColor: "#95B9C7",
     height: "100%",
     flexDirection:"column !important",
@@ -38,7 +39,7 @@ const useStyles = makeStyles(() => ({
     paddingTop:"1rem",
   },
   categoriesTypo: {
-    paddingTop:"10rem !important",
+    paddingTop:"5rem !important",
     marginRight:"10rem !important",
     fontFamily: "Century Gothic !important",
   },
@@ -46,9 +47,15 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#FAAFBA",
     display: "flex",
     height: "100%",
-    flexDirection:"column !important",
+    flexDirection:"row !important",
     alignItems: "center !important",
-  }
+  },
+  actionCard: {
+    backgroundColor: "black",
+    flexShrink: "3 !important",
+    margin: "1rem !important",
+  },
+
 }));
 
 
