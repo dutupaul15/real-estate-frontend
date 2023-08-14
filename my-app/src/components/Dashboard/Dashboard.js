@@ -51,12 +51,12 @@ const DashboardPage = () => {
       <Grid item xs={12} className={classes.bottomContainer}>
         <CssBaseline />
         <Grid container wrap="nowrap" xs={6} className={classes.leftContainer}>
-          <Grid item>
-            <Typography className={classes.categoriesTypo} variant="h6">
+          <Grid item className={classes.categoriesGridItem}>
+            <Typography sx={{height:"100px", width:"100px"}} className={classes.categoriesTypo} variant="h6">
               Categories
             </Typography>
           </Grid>
-          <Grid item paddingTop="3rem">
+          <Grid item paddingTop="2rem">
             <Typography fontStyle="italic">Single-floor house</Typography>
           </Grid>
           <Grid item paddingTop="1rem">

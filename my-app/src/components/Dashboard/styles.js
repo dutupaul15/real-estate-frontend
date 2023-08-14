@@ -12,7 +12,7 @@ const useStyles = makeStyles(() => ({
     flexDirection: "row !important",
   },
   navBar:{
-    backgroundColor:"red",
+   // backgroundColor:"red",
     height: "10%",
   },
   paulIMob: {
@@ -21,7 +21,7 @@ const useStyles = makeStyles(() => ({
     color: "#663300",
   },
   bottomContainer: {
-    backgroundColor: "yellow",
+   // backgroundColor: "yellow",
     display: "flex",
     flexDirection:"row !important",
     height: "87%",
@@ -29,7 +29,7 @@ const useStyles = makeStyles(() => ({
   },
   leftContainer:{
     display:  "flex",
-    backgroundColor: "#95B9C7",
+   // backgroundColor: "#95B9C7",
     height: "100%",
     flexDirection:"column !important",
     alignItems: "center !important",
@@ -39,20 +39,24 @@ const useStyles = makeStyles(() => ({
     paddingTop:"1rem",
   },
   categoriesTypo: {
-    paddingTop:"5rem !important",
-    marginRight:"10rem !important",
     fontFamily: "Century Gothic !important",
   },
-  rightContainer: {
-    backgroundColor: "#FAAFBA",
-    display: "flex",
-    height: "100%",
-    flexDirection:"row !important",
+  categoriesGridItem: {
     alignItems: "center !important",
+    paddingTop: "1rem",
+  },
+  rightContainer: {
+   // backgroundColor: "#FAAFBA",
+    display: "flex",
+    justifyContent: "center",
+    height: "100%",
+    // flexDirection:"row !important",
+    alignItems: "center",
   },
   actionCard: {
-    backgroundColor: "black",
-    flexShrink: "3 !important",
+    display: "flex",
+   // backgroundColor: "black",
+    flexShrink: "1 !important",
     margin: "1rem !important",
   },
 

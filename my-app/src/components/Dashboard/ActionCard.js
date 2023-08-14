@@ -10,7 +10,6 @@ import buy from "../../photos/buy.jpg";
 import rent from "../../photos/rent.jpg";
 import sell from "../../photos/sell.jpg";
 import theme from "../../utils/customThemes";
-import { SelectUnstyled } from "@mui/base";
 
 const ActionCard = (props) => {
   const action = props.action;
@@ -68,10 +67,10 @@ const ActionCard = (props) => {
     );
   } else {
     return (
-      <Card sx={{ width: 300, height: 300 }}>
+      <Card sx={{ maxWidth: 300, maxHeight: 300 }}>
         <CardMedia
           component="img"
-          height="140"
+          height="130"
           image={sell}
           alt="Cannot display the image!"
         />
