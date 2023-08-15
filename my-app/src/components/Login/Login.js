@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Grid, Typography, TextField, Button, Box, Link } from "@mui/material";
-import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 
 import theme from "../../utils/customThemes";
@@ -44,7 +43,7 @@ const LoginPage = () => {
         item
         sx={{
           width: "30%",
-          backgroundColor: "#d49c5d",
+          backgroundColor: "#ffe4c5",
           p: 2,
           borderRadius: "25px",
           border: "1px solid rgba(217, 217, 217, 0.5)",

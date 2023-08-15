@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Grid, Typography, TextField, Button } from "@mui/material";
-import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 
-import useStyles from "./styles";
+import image from "../../photos/backgroundImageRegister.jpg";
 import theme from "../../utils/customThemes";
 
 const RegisterPage = () => {
-  const classes = useStyles();
   const [inputFields, setInputFields] = useState([
     {
       email: "",
@@ -30,93 +28,91 @@ const RegisterPage = () => {
   };
 
   return (
-    <Grid container className={classes.mainContainer}>
-      <CssBaseline />
+    <Grid
+      container
+      sx={{
+        backgroundImage: `url(${image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100vh",
+        width: "100vw",
+      }}
+      flexDirection="column"
+    >
       <Grid
-        container
-        className={classes.bigContainer}
+        item
+        sx={{
+          width: "30%",
+          backgroundColor: "#ffe4c5",
+          p: 2,
+          borderRadius: "25px",
+          border: "1px solid rgba(217, 217, 217, 0.5)",
+          boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
+        }}
+        display="flex"
+        xs={7}
         flexDirection="column"
-        alignItems={"center"}
+        justifyContent="space-around"
       >
-        <Grid item>
-          <Grid container>
-            <Typography className={classes.paulIMob}>PaulImob</Typography>
-          </Grid>
-        </Grid>
-        <Grid item paddingTop={"100px"}>
-          <Grid container className={classes.credentialsTextField}>
-            <Grid container className={classes.credentialsTypo}>
-              <Typography>Email</Typography>
-            </Grid>
-            <TextField
-              required
-              className={classes.filledTextFiled}
-              size="small"
-              variant="filled"
-              name="email"
-              placeholder="Enter your email.."
-              onChange={updateInputFields}
-            ></TextField>
-          </Grid>
-          <Grid
-            container
-            className={classes.credentialsTextField}
-            paddingTop={"50px"}
-          >
-            <Grid container className={classes.credentialsTypo}>
-              <Typography>Username</Typography>
-            </Grid>
-            <TextField
-              required
-              className={classes.filledTextFiled}
-              size="small"
-              variant="filled"
-              name="username"
-              placeholder="Enter your username.."
-              onChange={updateInputFields}
-            ></TextField>
-          </Grid>
-          <Grid
-            container
-            className={classes.credentialsTextField}
-            paddingTop={"50px"}
-          >
-            <Grid container className={classes.credentialsTypo}>
-              <Typography>Password</Typography>
-            </Grid>
-            <TextField
-              type="password"
-              required
-              className={classes.filledTextFiled}
-              size="small"
-              variant="filled"
-              name="password"
-              placeholder="Enter your password.."
-              onChange={updateInputFields}
-            ></TextField>
-          </Grid>
-          <Grid container className={classes.buttonContainer}>
-            {inputFields.email &&
-            inputFields.username &&
-            inputFields.password ? (
-              <ThemeProvider theme={theme}>
-                <Button
-                  onClick={routeChange}
-                  variant="contained"
-                  color="custombrown"
-                >
-                  <Typography color={"whitesmoke"}>Sign up</Typography>
-                </Button>
-              </ThemeProvider>
-            ) : (
-              <ThemeProvider theme={theme}>
-                <Button variant="contained" color="custombrown" disabled>
-                  <Typography color={"whitesmoke"}>Sign up</Typography>
-                </Button>
-              </ThemeProvider>
-            )}
-          </Grid>
-        </Grid>
+        <Typography
+          sx={{
+            fontFamily: "Lucida Console",
+            fontSize: "50px",
+            color: "#663300",
+            fontWeight: "700",
+            textShadow: "0px 2px 2px rgba(3, 90, 124, 0.5)",
+            alignSelf: "center",
+          }}
+        >
+          Register
+        </Typography>
+        <TextField
+          required
+          size="small"
+          variant="filled"
+          label="Email"
+          name="email"
+          placeholder="Enter your email.."
+          onChange={updateInputFields}
+        ></TextField>
+        <TextField
+          required
+          size="small"
+          variant="filled"
+          label="Username"
+          name="username"
+          placeholder="Enter your username.."
+          onChange={updateInputFields}
+        ></TextField>
+        <TextField
+          type="password"
+          required
+          size="small"
+          variant="filled"
+          label="Password"
+          name="password"
+          placeholder="Enter your password.."
+          onChange={updateInputFields}
+        ></TextField>
+        {inputFields.email && inputFields.username && inputFields.password ? (
+          <ThemeProvider theme={theme}>
+            <Button
+              onClick={routeChange}
+              variant="contained"
+              color="custombrown"
+            >
+              <Typography color={"whitesmoke"}>Sign up</Typography>
+            </Button>
+          </ThemeProvider>
+        ) : (
+          <ThemeProvider theme={theme}>
+            <Button variant="contained" color="custombrown" disabled>
+              <Typography color={"whitesmoke"}>Sign up</Typography>
+            </Button>
+          </ThemeProvider>
+        )}
       </Grid>
     </Grid>
   );
